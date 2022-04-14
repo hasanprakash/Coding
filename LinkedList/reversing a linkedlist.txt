@@ -1,0 +1,10 @@
+LLNode *p = NULL, *c = h, *n = NULL;
+while(c) {
+n = c->next;
+c->next = p;
+p = c;
+c = n;
+}
+
+
+h -> head;

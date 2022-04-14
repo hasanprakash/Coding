@@ -1,0 +1,7 @@
+TOTAL is 4
+4 5 8 
+TOTAL is 13
+8 9 
+TOTAL is 30
+17 
+FINAL ANS 17

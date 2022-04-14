@@ -1,0 +1,2 @@
+1. Quicksort Partitioning
+2. Merge Sort Merging

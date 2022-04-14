@@ -1,0 +1,11 @@
+UnWeighted Graph:
+    BFS
+Weighted Graph:
+    Dijkstra (SSSP)
+        no -ve weight is allowed
+    Bellman-Ford (SSSP)
+        -ve weight is allowed
+    Floyd-Warshall 
+        both directed and undirected
+        adjacency matrix
+        noofvertices^3  noofvertices<400
