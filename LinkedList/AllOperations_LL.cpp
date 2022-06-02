@@ -1,4 +1,5 @@
 #include <fstream>
+#include <map>
 using namespace std;
 ifstream cin;
 ofstream cout;
@@ -15,7 +16,7 @@ class LinkedList {
     public:
     Node *head;
     LinkedList() {
-        this->head = NULL;
+        head = NULL;
     }
     void insert(int data) {
         Node *newNode = new Node(data);
@@ -59,20 +60,75 @@ class SpecialOperations : public LinkedList {
             }
         }
     }
+
+    // finds the middle element in the linked list
+    void middleInTheLinkedList() {
+        Node* slow = head;
+        Node* fast = head;
+        while(fast != NULL && fast->next != NULL) {
+            slow = slow->next;
+            fast = fast->next->next;
+        }
+        cout << "Middle Element is " << slow->data << endl;
+    }
+
+    // checks if loop is there in the linked list
+    bool isLoopExist(Node* head)
+    {
+        map<Node*, int> addresses;
+        Node* temp = head;
+        while(temp != NULL) {
+            if(addresses[temp->next] == 0)  {
+                addresses[temp->next] = 1;
+            }
+            else {
+                return true;
+            }
+            temp = temp->next;
+        }
+        return false;
+    }
+
+    // removing dublicates
+    Node *removeDuplicates(Node *head)
+    {
+        Node* temp = head;
+        while(temp != NULL) {
+            if(temp->next != NULL && temp->data == temp->next->data) {
+                temp->next = temp->next->next;
+            }
+            else
+            temp = temp->next;
+        }
+        return head;
+    }
+
+    void moveLastElementToFront() {
+        Node* temp = head;
+        while(temp->next->next != NULL) {
+            temp = temp->next;
+        }
+        temp->next->next = head;
+        head = temp->next;
+        temp->next = NULL;
+    }
 };
 int main() {
     cin.open("../input.txt");
     cout.open("../output.txt");
     int n;
     cin >> n;
-    Node* head = NULL;
-    LinkedList ll;
-    for(int i=0;i<n;i++) {
-        cin >> n;
-        ll.insert(n);
-    }
-    ll.print();
     SpecialOperations so;
-    so.reverseAtEveryLevel(1);
-    ll.print();
+    for(int i=0;i<n;i++) {
+        int num;
+        cin >> num;
+        so.insert(num);
+    }
+    so.print();
+    so.middleInTheLinkedList();
+    so.moveLastElementToFront();
+    so.print();
+    so.moveLastElementToFront();
+    so.print();
+    return 0;
 }

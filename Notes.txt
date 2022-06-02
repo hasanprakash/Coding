@@ -1,0 +1,6 @@
+* Detecting the loop in the linked list:
+	1. Storing the addresses in a map, while iterating check if the address is present in that map or not.
+	2. Holding a flag variable in the node. Toggle it for every visit.
+	3. Using Floyd Cycle Algorithm, take slow_variable (moves one step in every iteration) and fast_variable
+moves 2 steps in every iteration) if they meet -> loop exist. Otherwise not!
+

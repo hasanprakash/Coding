@@ -1,2 +1,9 @@
-1. Quicksort Partitioning
-2. Merge Sort Merging
+1. Quicksort Partitioning (done)
+2. Merge Sort Merging (done)
+3. Bubble, Insertion, Selection Sort (done)
+4. Linked List Basic Operations. (done)
+5. Middle Element in the Linked List. (done)
+6. Reversing a Linked List.
+7. Detecting Loop in the Linked List.
+8. Removing loop in the linked list.
+9. Sorting the linked list.
